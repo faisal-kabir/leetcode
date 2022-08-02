@@ -1,11 +1,11 @@
 import java.util.*;
 
-public class Find_Pivot_Index_724 {
+public class Find_The_Middle_Index_in_Array_1991 {
     public static void main(String args[]) {
-        System.out.println(pivotIndex(new int[] { 2, 1, -1 }));
+        System.out.println(findMiddleIndex(new int[] { 2, 5 }));
     }
 
-    public static int pivotIndex(int[] nums) {
+    public static int findMiddleIndex(int[] nums) {
         int index = -1;
 
         int last = 0;
