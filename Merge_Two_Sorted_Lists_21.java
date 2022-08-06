@@ -1,6 +1,6 @@
 public class Merge_Two_Sorted_Lists_21 {
     public static void main(String args[]) {
-        System.out.println(mergeTwoLists(new ListNode(1,new ListNode(2,new ListNode(4))),new ListNode(1,new ListNode(3,new ListNode(4)))));
+        System.out.println(mergeTwoLists(new ListNode(1,new ListNode(2,new ListNode(4,new ListNode(7,new ListNode(8))))),new ListNode(1,new ListNode(3,new ListNode(4,new ListNode(6))))));
     }
 
 
@@ -13,25 +13,31 @@ public class Merge_Two_Sorted_Lists_21 {
             return list1;
         }
 
-        ListNode margeList = list1;
-        while(list1!=null){
-            //System.out.println("Current <= "+(current.val <= list2.val));
-            //System.out.println("Current Next >= "+((current.next !=null ? current.next.val >= list2.val : false)));
-            if(list1.val <= list2.val && (list1.next !=null ? list1.next.val >= list2.val : false)){
-                //list1.next = new ListNode(list2.val,list1.next);
-                margeList.next = new ListNode(list2.val);
-                list2 = list2.next;
-            } else {
-                margeList.next = new ListNode(list1.val);
-            }
-            if(list1.next==null && list2!=null){
-                list1.next = list2;
-            }
-            System.out.println(margeList.val);
-            list1 = list1.next;
+        if(list1.val > list2.val){
+            ListNode ls = list2;
+            list2 = list1;
+            list1 = ls;
         }
-
-        return margeList;
+        ListNode current = list1;
+        while(current!=null){
+            if(list2!=null && current.val >= list2.val){
+                int swap = current.val;
+                current.val = list2.val;
+                current.next = new ListNode(swap,current.next);
+                list2 = list2.next;
+            } 
+            
+            current = current.next;
+        }
+        if(list2!=null){
+            current = list1;
+            while(current.next!=null){
+                current = current.next;
+            }
+            current.next = list2;
+        }
+    
+        return list1;
     }
 
 }
