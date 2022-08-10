@@ -23,21 +23,37 @@ public class Validate_Binary_Search_Tree_98 {
             return true;
         }
 
-        nextNode(root);
+        nextNode(root,root.val,0,null,null);
         return valid;
     }
 
-    public static void nextNode(TreeNode node){
-        if((node.left!=null && node.left.val >= node.val) || (node.right!=null && node.val >= node.right.val)){
-            valid = false;
+    /**
+     * @param node
+     * @param headValue
+     * @param isLeft
+     */
+    public static void nextNode(TreeNode node,int headValue,int lastValue,Boolean isLeft,Boolean isHeadLeft){
+        System.out.println(node.val + " isLeft = "+isLeft+" / isHeadLeft = "+isHeadLeft);
+        if(isHeadLeft!=null){
+            if(isHeadLeft && headValue<node.val){
+                valid = false;
+            } else if(!isHeadLeft && headValue>node.val){
+                valid = false;
+            } else if(isLeft && node.val > lastValue){
+                valid = false;
+            } else if(!isLeft && node.val < lastValue){
+                valid = false;
+            }
         }
 
-        if (node.left != null){
-            nextNode(node.left);
-        }
+        if(valid){
+            if (node.left != null){
+                nextNode(node.left,headValue,node.val,true,isHeadLeft!=null ? isHeadLeft : true);
+            }
 
-        if (node.right != null){
-            nextNode(node.right);
+            if (node.right != null){
+                nextNode(node.right,headValue,node.val,false,isHeadLeft!=null ? isHeadLeft : false);
+            }
         }
     }
 
