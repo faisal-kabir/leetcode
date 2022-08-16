@@ -1,11 +1,12 @@
 public class Search_Insert_Position_35 {
     
     public static void main(String args[]) {
-       System.out.println(searchInsert(new int[]{1,3,5}, 4)); //2
+       //System.out.println(searchInsert(new int[]{1,3,5,6,7,9,10,14,15,16,23,24}, 17)); //2
+       System.out.println(searchInsert(new int[]{-1,3,5,6}, 0)); //2
     }
 
     public static int searchInsert(int[] nums, int target) {
-        if(target == 0){
+        if(target == 0 && nums[0]>=0){
             return 0;
         } else if(nums.length==1){
             if(nums[0]==target){
@@ -26,9 +27,12 @@ public class Search_Insert_Position_35 {
             
             if(maxLength >= start){
                 int mid = start + (maxLength-start)/2;
-                System.out.println(nums[mid]);
+                
                 if(nums[mid] == target){
                     index = mid;
+                    break;
+                } else if(nums[mid]< target && target < nums[mid+1]) {
+                    index = mid+1;
                     break;
                 } else if(nums[mid] > target){
                     maxLength = mid-1;
