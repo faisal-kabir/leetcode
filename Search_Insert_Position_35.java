@@ -2,7 +2,8 @@ public class Search_Insert_Position_35 {
     
     public static void main(String args[]) {
        //System.out.println(searchInsert(new int[]{1,3,5,6,7,9,10,14,15,16,23,24}, 17)); //2
-       System.out.println(searchInsert(new int[]{-1,3,5,6}, 0)); //2
+       //System.out.println(searchInsert(new int[]{-1,3,5,6}, 0)); //2
+       System.out.println(Math.round(Math.pow(1.61803, 30)/Math.sqrt(5)));
     }
 
     public static int searchInsert(int[] nums, int target) {
@@ -27,7 +28,6 @@ public class Search_Insert_Position_35 {
             
             if(maxLength >= start){
                 int mid = start + (maxLength-start)/2;
-                
                 if(nums[mid] == target){
                     index = mid;
                     break;

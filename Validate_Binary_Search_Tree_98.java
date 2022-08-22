@@ -1,19 +1,7 @@
 public class Validate_Binary_Search_Tree_98 {
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        TreeNode(int val, TreeNode left, TreeNode right) {
-             this.val = val;
-             this.left = left;
-             this.right = right;
-        }
-    }
 
     public static void main(String args[]) {
-        
+        isValidBST(TreeNode.createTree(new Integer[]{32,26,47,19,null,null,56,null,27}));
     }
     static boolean valid = true;
     public static boolean isValidBST(TreeNode root) {
@@ -27,13 +15,8 @@ public class Validate_Binary_Search_Tree_98 {
         return valid;
     }
 
-    /**
-     * @param node
-     * @param headValue
-     * @param isLeft
-     */
     public static void nextNode(TreeNode node,int headValue,int lastValue,Boolean isLeft,Boolean isHeadLeft){
-        System.out.println(node.val + " isLeft = "+isLeft+" / isHeadLeft = "+isHeadLeft);
+        System.out.println(node.val + " isLeft = "+isLeft+" / isHeadLeft = "+isHeadLeft+" / Last Value = "+lastValue);
         if(isHeadLeft!=null){
             if(isHeadLeft && headValue<node.val){
                 valid = false;
