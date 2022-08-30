@@ -1,0 +1,11 @@
+https://leetcode.com/problems/flood-fill/?envType=study-plan&id=level-1 
+https://leetcode.com/problems/number-of-islands/
+https://leetcode.com/problems/climbing-stairs/?envType=study-plan&id=level-1
+https://leetcode.com/problems/min-cost-climbing-stairs/?envType=study-plan&id=level-1
+https://leetcode.com/problems/find-all-anagrams-in-a-string/
+https://leetcode.com/problems/longest-repeating-character-replacement/?envType=study-plan&id=level-1
+https://leetcode.com/problems/bulls-and-cows/?envType=study-plan&id=level-1
+https://leetcode.com/problems/backspace-string-compare/
+https://leetcode.com/problems/decode-string/
+https://leetcode.com/problems/last-stone-weight/
+https://leetcode.com/problems/top-k-frequent-words/?envType=study-plan&id=level-1
